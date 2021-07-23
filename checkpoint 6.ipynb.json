@@ -1,0 +1,193 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "28e57ef0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original array: array('i', [3, 5, 7, 2, 14, 6, 8, 5])\n",
+      "Convert the said array to an ordinary list with the same items:\n",
+      "[3, 5, 7, 2, 14, 6, 8, 5]\n"
+     ]
+    }
+   ],
+   "source": [
+    "from array import *\n",
+    "array_num = array('i', [3, 5, 7, 2, 14, 6, 8, 5])\n",
+    "print(\"Original array: \"+str(array_num))\n",
+    "num_list = array_num.tolist()\n",
+    "print(\"Convert the said array to an ordinary list with the same items:\")\n",
+    "print(num_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "a62084e0",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ValueError",
+     "evalue": "cannot reshape array of size 6 into shape (5,7)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-3-f5629d64c646>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mnumpy\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mm\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0marange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m6\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreshape\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m5\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m7\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Original matrix:\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mm\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mresult\u001b[0m \u001b[0;34m=\u001b[0m  \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtrace\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mm\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mValueError\u001b[0m: cannot reshape array of size 6 into shape (5,7)"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "m = np.arange(6).reshape(5,7)\n",
+    "print(\"Original matrix:\")\n",
+    "print(m)\n",
+    "result =  np.trace(m)\n",
+    "print(\"Condition number of the said matrix:\")\n",
+    "print(result)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "5af244e3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original array: \n",
+      "[[ 5 15 30]\n",
+      " [50 60 70]]\n",
+      "Values bigger than 10 = [15 30 50 60 70]\n",
+      "Their indices are  (array([0, 0, 1, 1, 1]), array([1, 2, 0, 1, 2]))\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "x = np.array([[5, 15, 30], [50, 60, 70]])\n",
+    "print(\"Original array: \")\n",
+    "print(x)\n",
+    "print(\"Values bigger than 10 =\", x[x>10])\n",
+    "print(\"Their indices are \", np.nonzero(x > 10))\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "41fbd08b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original matrix:\n",
+      "\n",
+      "[[0.866915   0.0937386  0.39360061 0.15171789 0.47645055 0.98627128\n",
+      "  0.90897281 0.06145834 0.59643062 0.43121643 0.20431561 0.0745598\n",
+      "  0.05846373]\n",
+      " [0.58497504 0.97580935 0.0954699  0.31852166 0.43090168 0.73237299\n",
+      "  0.36199108 0.01685408 0.22446385 0.76894641 0.35449974 0.4172507\n",
+      "  0.34563629]\n",
+      " [0.31997443 0.38424888 0.42779105 0.23645307 0.14012178 0.95438215\n",
+      "  0.63335568 0.25632767 0.78600247 0.89451364 0.24813295 0.480439\n",
+      "  0.97686197]\n",
+      " [0.82411301 0.41806493 0.93313384 0.60342492 0.32596837 0.14192951\n",
+      "  0.36884404 0.78980592 0.32154746 0.58648269 0.17787928 0.30743985\n",
+      "  0.58534213]\n",
+      " [0.73444141 0.60149878 0.2852136  0.44905399 0.48360576 0.14190173\n",
+      "  0.630217   0.45713285 0.08866644 0.25370745 0.39118471 0.21276453\n",
+      "  0.35680487]\n",
+      " [0.13551126 0.82168784 0.52491672 0.88098867 0.15151116 0.05178077\n",
+      "  0.41863261 0.66485643 0.79349393 0.21431221 0.49343465 0.00458691\n",
+      "  0.7714629 ]\n",
+      " [0.980956   0.10920101 0.36769197 0.11289513 0.49908675 0.67077448\n",
+      "  0.89120938 0.35621362 0.85354551 0.94205446 0.31258417 0.05509258\n",
+      "  0.96880257]]\n",
+      "\n",
+      "Subtract the mean of each row of the said matrix:\n",
+      "\n",
+      "[[ 4.58906445e-01 -3.14269955e-01 -1.44079498e-02 -2.56290672e-01\n",
+      "   6.84419894e-02  5.78262724e-01  5.00964250e-01 -3.46550224e-01\n",
+      "   1.88422061e-01  2.32078712e-02 -2.03692953e-01 -3.33448762e-01\n",
+      "  -3.49544825e-01]\n",
+      " [ 1.52075592e-01  5.42909907e-01 -3.37429540e-01 -1.14377785e-01\n",
+      "  -1.99776735e-03  2.99473550e-01 -7.09083623e-02 -4.16045364e-01\n",
+      "  -2.08435590e-01  3.36046966e-01 -7.83996992e-02 -1.56487482e-02\n",
+      "  -8.72631584e-02]\n",
+      " [-1.98379783e-01 -1.34105327e-01 -9.05631642e-02 -2.81901144e-01\n",
+      "  -3.78232429e-01  4.36027940e-01  1.15001470e-01 -2.62026540e-01\n",
+      "   2.67648257e-01  3.76159430e-01 -2.70221261e-01 -3.79152080e-02\n",
+      "   4.58507760e-01]\n",
+      " [ 3.33037935e-01 -7.30101415e-02  4.42058765e-01  1.12349845e-01\n",
+      "  -1.65106706e-01 -3.49145566e-01 -1.22231031e-01  2.98730847e-01\n",
+      "  -1.69527610e-01  9.54076221e-02 -3.13195796e-01 -1.83635222e-01\n",
+      "   9.42670579e-02]\n",
+      " [ 3.43195784e-01  2.10253153e-01 -1.06032020e-01  5.78083615e-02\n",
+      "   9.23601313e-02 -2.49343893e-01  2.38971375e-01  6.58872253e-02\n",
+      "  -3.02579181e-01 -1.37538172e-01 -6.09120415e-05 -1.78481095e-01\n",
+      "  -3.44407557e-02]\n",
+      " [-3.20425364e-01  3.65751216e-01  6.89801020e-02  4.25052047e-01\n",
+      "  -3.04425462e-01 -4.04155853e-01 -3.73040066e-02  2.08919809e-01\n",
+      "   3.37557314e-01 -2.41624410e-01  3.74980348e-02 -4.51349706e-01\n",
+      "   3.15526278e-01]\n",
+      " [ 4.33255411e-01 -4.38499573e-01 -1.80008621e-01 -4.34805455e-01\n",
+      "  -4.86138409e-02  1.23073896e-01  3.43508797e-01 -1.91486967e-01\n",
+      "   3.05844926e-01  3.94353871e-01 -2.35116421e-01 -4.92608010e-01\n",
+      "   4.21101986e-01]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "print(\"Original matrix:\\n\")\n",
+    "X = np.random.rand(7, 13)\n",
+    "print(X)\n",
+    "print(\"\\nSubtract the mean of each row of the said matrix:\\n\")\n",
+    "Y = X - X.mean(axis=1, keepdims=True)\n",
+    "print(Y)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7704e168",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
